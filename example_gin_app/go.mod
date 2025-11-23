@@ -1,4 +1,4 @@
-module example1
+module example_gin_app
 
 go 1.25.1
 
