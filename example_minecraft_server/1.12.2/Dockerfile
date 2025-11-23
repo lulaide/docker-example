@@ -1,3 +1,7 @@
-From openjdk:8u342-jre
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
+
+COPY ./* /app/
+
+ENTRYPOINT [ "java", "-jar", "paper-1.12.2.jar"]
