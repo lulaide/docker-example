@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    image: ghcr.io/lulaide/web-backend:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    volumes:
+      - app-data:/data
+
+  frontend:
+    image: ghcr.io/lulaide/web-frontend:latest
+    ports:
+      - "5173:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  app-data:
