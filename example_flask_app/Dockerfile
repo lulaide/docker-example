@@ -6,4 +6,7 @@ COPY . .
 
 RUN uv sync
 
-CMD ["uv", "run", "main.py"]
+EXPOSE 5000
+
+ENTRYPOINT ["uv", "run", "main.py"]
+CMD [ "--name", "World" ]
